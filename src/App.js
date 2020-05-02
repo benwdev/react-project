@@ -10,10 +10,11 @@ const app = props => {
         { name: 'Max', age: 30 },
         { name: 'Max2', age: 35 },
         { name: 'Max3', age: 38 }
-      ],
-      otherState: "blah"
+      ]
     }
   )
+
+  const [otherState, setOtherState] = useState('Some other value')
 
   const switchNameHandler = () => {
     //console.log('was clicked')
@@ -22,8 +23,9 @@ const app = props => {
         { name: 'Maxamilian', age: 30 },
         { name: 'Max2', age: 35 },
         { name: 'Max3', age: 38 }
-      ] 
+      ]
     })
+    setOtherState('My new string')
   }
 
   return (
@@ -33,6 +35,7 @@ const app = props => {
       <Person name={personsState.persons[0].name} age={personsState.persons[0].age} />
       <Person name={personsState.persons[1].name} age={personsState.persons[1].age}>My Hobbies: Racing</Person>
       <Person name={personsState.persons[2].name} age={personsState.persons[2].age} />
+  <p>This is the state: {otherState}</p>
     </div>
   );
     
